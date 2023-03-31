@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33423.256
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "KuWoMusicDownload", "KuWoMusicDownload.pyproj", "{884A12FE-376D-4451-A44C-7F040E44D1DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{884A12FE-376D-4451-A44C-7F040E44D1DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{884A12FE-376D-4451-A44C-7F040E44D1DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {95E6DFDA-12E2-4253-90CE-3347FF46B0DC}
+	EndGlobalSection
+EndGlobal
