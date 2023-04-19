@@ -45,16 +45,12 @@ class SetUI(object):
         file_menu = tk.Menu(ui_menu, tearoff=0)
         ui_menu.add_cascade(label='菜单', menu=file_menu)
         file_menu.add_command(
-            label='使用说明', command=lambda: webbrowser.open('https://github.com/Grey-Wind/KuWoMusicDownload'))
+            label='使用说明', command=lambda: webbrowser.open('www.baidu.com'))
         file_menu.add_command(
-            label='关于作者', command=lambda: webbrowser.open('https://github.com/Grey-Wind/KuWoMusicDownload'))
+            label='关于作者', command=lambda: webbrowser.open('www.baidu.com'))
         file_menu.add_command(label='退出', command=self.ui_root.quit)
 
         # 控件内容设置
-        choice_passageway = tk.Label(
-            frame_1, text='请选择音乐搜索通道：', padx=10, pady=10)
-        passageway_button_1 = tk.Radiobutton(
-            frame_1, text='酷我', variable=self.ui_var, value=1, width=10, height=3)
         input_link = tk.Label(frame_2, text="请输入歌曲名或歌手：")
         entry_style = tk.Entry(frame_2, textvariable=self.ui_url, highlightcolor='Fuchsia', highlightthickness=1,
                                width=35)
@@ -75,8 +71,6 @@ class SetUI(object):
         frame_2.pack()
         frame_3.pack()
         frame_4.pack()
-        choice_passageway.grid(row=0, column=0)
-        passageway_button_1.grid(row=0, column=1)
         input_link.grid(row=0, column=0)
         entry_style.grid(row=0, column=1)
         label2.grid(row=0, column=2)
@@ -102,7 +96,7 @@ class SetUI(object):
     @retry(stop_max_attempt_number=5)
     def get_KuWoMusic(self):
         """
-        获取qq音乐
+        获取酷我音乐
         :return:
         """
         # 清空treeview表格数据
@@ -178,19 +172,18 @@ class SetUI(object):
         下载音乐
         :return:
         """
-        if not os.path.exists('./wangYiYun'):
-            os.mkdir("./wangYiYun/")
+        if not os.path.exists('./kuwo_music'):
+            os.mkdir("./kuwo_music/")
         if self.song_num is not None:
             song_name = self.song_name + '--' + self.song_author + ".mp3"
             try:
-                save_path = os.path.join('./wangYiYun/{}'.format(song_name)) \
+                save_path = os.path.join('./kuwo_music/{}'.format(song_name)) \
                     .replace('\\', '/')
                 true_path = os.path.abspath(save_path)
                 resp = requests.get(self.song_url)
                 with open(save_path, 'wb') as file:
                     file.write(resp.content)
-                    mes_box.showinfo(title='下载成功', message='歌曲：%s,保存地址为%s' % (
-                        self.song_name, true_path))
+                    # mes_box.showinfo(title='下载成功', message='歌曲：%s,保存地址为%s' % (self.song_name, true_path))
             except Exception:
                 mes_box.showerror(title='错误', message='未找到存放歌曲的文件夹')
         else:
