@@ -8,6 +8,8 @@ using System.Linq;
 using System.Net;
 using System.IO;
 using Newtonsoft.Json.Linq;
+using System.Net.Http.Headers;
+
 
 namespace KuWoMusicDownload
 {
@@ -23,14 +25,14 @@ namespace KuWoMusicDownload
             InitializeComponent();
             headers = new Dictionary<string, string>
             {
-                { "accept", "application/json, text/plain, */*"},
+                //{ "accept", "application/json, text/plain, */*"},
                 { "accept-encoding", "gzip, deflate" },
                 { "accept-language", "zh-CN,zh;q=0.9" },
                 { "cache-control", "no-cache" },
                 { "Connection", "keep-alive" },
                 { "csrf", "HH3GHIQ0RYM" },
                 { "Referer", apiUrl + "/search/list?key=%E5%91%A8%E6%9D%B0%E4%BC%A6" },
-                { "User-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" },
+                { "User-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36" },
                 { "Cookie", "_ga=GA1.2.218753071.1648798611; _gid=GA1.2.144187149.1648798611; _gat=1; Hm_lvt_cdb524f42f0ce19b169a8071123a4797=1648798611; Hm_lpvt_cdb524f42f0ce19b169a8071123a4797=1648798611; kw_token=HH3GHIQ0RYM" }
             };
         }
@@ -49,7 +51,11 @@ namespace KuWoMusicDownload
             HttpWebRequest request = HttpWebRequest.CreateHttp(searchRequestUrl);
             foreach (var header in headers)
             {
-                request.Headers.Add(header.Key, header.Value);
+                //request.Headers.Add(header.Key, header.Value);
+                HttpWebRequest requests = (HttpWebRequest)WebRequest.Create("http://www.kuwo.cn");
+                request.Accept = "application/json, text/plain, */*, text/html";
+                //WebResponse response = request.GetResponse();
+                //requests.Headers.Add(HttpRequestHeader.Accept, "text/html");
             }
             request.Timeout = 20000;
 
@@ -104,7 +110,7 @@ namespace KuWoMusicDownload
             HttpWebRequest request = HttpWebRequest.CreateHttp(playRequestUrl);
             foreach (var header in headers)
             {
-                request.Headers.Add(header.Key, header.Value);
+                request.Headers.Set(header.Key, header.Value);
             }
 
             try

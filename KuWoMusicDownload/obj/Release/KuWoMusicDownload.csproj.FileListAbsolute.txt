@@ -1,0 +1,17 @@
+D:\project\KuWoMusicDownload\KuWoMusicDownload\bin\Release\KuWoMusicDownload.exe.config
+D:\project\KuWoMusicDownload\KuWoMusicDownload\bin\Release\KuWoMusicDownload.exe
+D:\project\KuWoMusicDownload\KuWoMusicDownload\bin\Release\KuWoMusicDownload.pdb
+D:\project\KuWoMusicDownload\KuWoMusicDownload\bin\Release\Newtonsoft.Json.dll
+D:\project\KuWoMusicDownload\KuWoMusicDownload\bin\Release\Newtonsoft.Json.xml
+D:\project\KuWoMusicDownload\KuWoMusicDownload\obj\Release\MainWindow.g.cs
+D:\project\KuWoMusicDownload\KuWoMusicDownload\obj\Release\App.g.cs
+D:\project\KuWoMusicDownload\KuWoMusicDownload\obj\Release\KuWoMusicDownload_MarkupCompile.cache
+D:\project\KuWoMusicDownload\KuWoMusicDownload\obj\Release\KuWoMusicDownload_MarkupCompile.lref
+D:\project\KuWoMusicDownload\KuWoMusicDownload\obj\Release\MainWindow.baml
+D:\project\KuWoMusicDownload\KuWoMusicDownload\obj\Release\KuWoMusicDownload.g.resources
+D:\project\KuWoMusicDownload\KuWoMusicDownload\obj\Release\KuWoMusicDownload.Properties.Resources.resources
+D:\project\KuWoMusicDownload\KuWoMusicDownload\obj\Release\KuWoMusicDownload.csproj.GenerateResource.cache
+D:\project\KuWoMusicDownload\KuWoMusicDownload\obj\Release\KuWoMusicDownload.csproj.CoreCompileInputs.cache
+D:\project\KuWoMusicDownload\KuWoMusicDownload\obj\Release\KuWoMusicDownload.csproj.CopyComplete
+D:\project\KuWoMusicDownload\KuWoMusicDownload\obj\Release\KuWoMusicDownload.exe
+D:\project\KuWoMusicDownload\KuWoMusicDownload\obj\Release\KuWoMusicDownload.pdb
