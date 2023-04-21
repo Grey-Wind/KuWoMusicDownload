@@ -1,0 +1,7 @@
+D:\project\KuWoMusicDownload\PythonBuild\bin\Release\PythonBuild.exe.config
+D:\project\KuWoMusicDownload\PythonBuild\bin\Release\PythonBuild.exe
+D:\project\KuWoMusicDownload\PythonBuild\bin\Release\PythonBuild.pdb
+D:\project\KuWoMusicDownload\PythonBuild\obj\Release\PythonBuild.csproj.AssemblyReference.cache
+D:\project\KuWoMusicDownload\PythonBuild\obj\Release\PythonBuild.csproj.CoreCompileInputs.cache
+D:\project\KuWoMusicDownload\PythonBuild\obj\Release\PythonBuild.exe
+D:\project\KuWoMusicDownload\PythonBuild\obj\Release\PythonBuild.pdb
