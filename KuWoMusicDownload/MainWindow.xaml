@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KuWoMusicDownload"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="酷我音乐下载器" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
+            <TextBox x:Name="SearchInput" Width="200" Margin="0 0 10 0" />
+            <Button x:Name="SearchButton" Content="搜索" Click="SearchButton_Click" />
+        </StackPanel>
+        <ListView x:Name="SearchResult" Grid.Row="1" Margin="10" SelectionMode="Single" ItemsSource="{Binding}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="#" DisplayMemberBinding="{Binding Index}" Width="50"/>
+                    <GridViewColumn Header="歌曲名" DisplayMemberBinding="{Binding Title}" Width="200"/>
+                    <GridViewColumn Header="歌手" DisplayMemberBinding="{Binding Artist}" Width="150"/>
+                    <GridViewColumn Header="专辑" DisplayMemberBinding="{Binding Album}" Width="150"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="DownloadButton" Content="下载" Click="DownloadButton_Click" Grid.Row="2" Margin="10" />
     </Grid>
 </Window>
