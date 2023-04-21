@@ -1,0 +1,16 @@
+D:\project\KuWoMusicDownload\MusicDownloader\bin\Debug\MusicDownloader.exe.config
+D:\project\KuWoMusicDownload\MusicDownloader\bin\Debug\MusicDownloader.exe
+D:\project\KuWoMusicDownload\MusicDownloader\bin\Debug\MusicDownloader.pdb
+D:\project\KuWoMusicDownload\MusicDownloader\bin\Debug\Newtonsoft.Json.dll
+D:\project\KuWoMusicDownload\MusicDownloader\bin\Debug\Newtonsoft.Json.xml
+D:\project\KuWoMusicDownload\MusicDownloader\obj\Debug\MainWindow.baml
+D:\project\KuWoMusicDownload\MusicDownloader\obj\Debug\MainWindow.g.cs
+D:\project\KuWoMusicDownload\MusicDownloader\obj\Debug\App.g.cs
+D:\project\KuWoMusicDownload\MusicDownloader\obj\Debug\MusicDownloader_MarkupCompile.cache
+D:\project\KuWoMusicDownload\MusicDownloader\obj\Debug\MusicDownloader.g.resources
+D:\project\KuWoMusicDownload\MusicDownloader\obj\Debug\MusicDownloader.Properties.Resources.resources
+D:\project\KuWoMusicDownload\MusicDownloader\obj\Debug\MusicDownloader.csproj.GenerateResource.cache
+D:\project\KuWoMusicDownload\MusicDownloader\obj\Debug\MusicDownloader.csproj.CoreCompileInputs.cache
+D:\project\KuWoMusicDownload\MusicDownloader\obj\Debug\MusicDownloader.csproj.CopyComplete
+D:\project\KuWoMusicDownload\MusicDownloader\obj\Debug\MusicDownloader.exe
+D:\project\KuWoMusicDownload\MusicDownloader\obj\Debug\MusicDownloader.pdb
