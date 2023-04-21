@@ -45,9 +45,9 @@ class SetUI(object):
         file_menu = tk.Menu(ui_menu, tearoff=0)
         ui_menu.add_cascade(label='菜单', menu=file_menu)
         file_menu.add_command(
-            label='使用说明', command=lambda: webbrowser.open('www.baidu.com'))
+            label='使用说明', command=lambda: webbrowser.open('https://github.com/Grey-Wind/KuWoMusicDownload'))
         file_menu.add_command(
-            label='关于作者', command=lambda: webbrowser.open('www.baidu.com'))
+            label='关于作者', command=lambda: webbrowser.open('https://github.com/Grey-Wind/'))
         file_menu.add_command(label='退出', command=self.ui_root.quit)
 
         # 控件内容设置
