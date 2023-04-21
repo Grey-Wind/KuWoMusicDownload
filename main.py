@@ -207,7 +207,7 @@ class SetUI(object):
             event, values = window.read(timeout=10)
             if event == 'Cancel' or event is None:
                 break
-            _progress_bar.UpdateBar(i + 1)
+            # _progress_bar.UpdateBar(i + 1)
 
     def ui_center(self):
         """
