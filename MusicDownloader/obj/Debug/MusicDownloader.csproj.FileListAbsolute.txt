@@ -14,3 +14,4 @@ D:\project\KuWoMusicDownload\MusicDownloader\obj\Debug\MusicDownloader.csproj.Co
 D:\project\KuWoMusicDownload\MusicDownloader\obj\Debug\MusicDownloader.csproj.CopyComplete
 D:\project\KuWoMusicDownload\MusicDownloader\obj\Debug\MusicDownloader.exe
 D:\project\KuWoMusicDownload\MusicDownloader\obj\Debug\MusicDownloader.pdb
+D:\project\KuWoMusicDownload\MusicDownloader\obj\Debug\MusicDownloader.csproj.AssemblyReference.cache

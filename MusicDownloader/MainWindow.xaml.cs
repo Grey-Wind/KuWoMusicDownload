@@ -52,18 +52,53 @@ namespace MusicDownloader
                 string result = reader.ReadToEnd();
 
                 JObject json = JObject.Parse(result);
-                JArray data = (JArray)json["data"]["list"];
+                JArray data = null;
+                if (json["data"] != null)
+                {
+                    data = (JArray)json["data"]["list"];
+                }
+
 
                 foreach (var item in data)
                 {
-                    Song song = new Song();
-                    song.Id = item["musicrid"].ToString().Substring(6);
-                    song.Name = item["name"].ToString();
-                    song.Artist = item["artist"].ToString();
-                    song.Duration = item["songTimeMinutes"].ToString();
-                    song.Size = item["sizeflac"].ToString();
-                    song.Url = item["url"].ToString();
-                    songs.Add(song);
+                    Song song = null;
+                    if (item["musicrid"] != null ||
+                        item["name"] != null ||
+                        item["artist"] != null ||
+                        item["songTimeMinutes"] != null ||
+                        item["sizeflac"] != null ||
+                        item["url"] != null)
+                    {
+                        song = new Song();
+                        if (item["musicrid"] != null)
+                        {
+                            song.Id = item["musicrid"].ToString().Substring(6);
+                        }
+                        if (item["name"] != null)
+                        {
+                            song.Name = item["name"].ToString();
+                        }
+                        if (item["artist"] != null)
+                        {
+                            song.Artist = item["artist"].ToString();
+                        }
+                        if (item["songTimeMinutes"] != null)
+                        {
+                            song.Duration = item["songTimeMinutes"].ToString();
+                        }
+                        if (item["sizeflac"] != null)
+                        {
+                            song.Size = item["sizeflac"].ToString();
+                        }
+                        if (item["url"] != null)
+                        {
+                            song.Url = item["url"].ToString();
+                        }
+                    }
+                    if (song != null)
+                    {
+                        songs.Add(song);
+                    }
                 }
             }
             catch (WebException ex)
@@ -113,6 +148,26 @@ namespace MusicDownloader
             public string Duration { get; set; }
             public string Size { get; set; }
             public string Url { get; set; }
+
+            public Song()
+            {
+                Id = "";
+                Name = "";
+                Artist = "";
+                Duration = "";
+                Size = "";
+                Url = "";
+            }
+
+            public Song(string id, string name, string artist, string duration, string size, string url)
+            {
+                Id = id ?? "";
+                Name = name ?? "";
+                Artist = artist ?? "";
+                Duration = duration ?? "";
+                Size = size ?? "";
+                Url = url ?? "";
+            }
         }
     }
 }
