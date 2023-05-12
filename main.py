@@ -7,7 +7,6 @@ import PySimpleGUI as sg
 from tkinter import ttk
 from retrying import retry
 
-
 class SetUI(object):
     """
     音乐弹框界面
@@ -16,7 +15,7 @@ class SetUI(object):
     def __init__(self, weight=1000, height=600):
         self.ui_weight = weight
         self.ui_height = height
-        self.title = " 音乐破解软件(仅限酷我音乐)"
+        self.title = " 酷我音乐下载"
         self.ui_root = tk.Tk(className=self.title)
         self.ui_url = tk.StringVar()
         self.ui_var = tk.IntVar()
@@ -44,10 +43,8 @@ class SetUI(object):
         self.ui_root.config(menu=ui_menu)
         file_menu = tk.Menu(ui_menu, tearoff=0)
         ui_menu.add_cascade(label='菜单', menu=file_menu)
-        file_menu.add_command(
-            label='使用说明', command=lambda: webbrowser.open('https://github.com/Grey-Wind/KuWoMusicDownload'))
-        file_menu.add_command(
-            label='关于作者', command=lambda: webbrowser.open('https://github.com/Grey-Wind/'))
+        file_menu.add_command(label='使用说明', command=lambda: webbrowser.open('www.baidu.com'))
+        file_menu.add_command(label='关于作者', command=lambda: webbrowser.open('www.baidu.com'))
         file_menu.add_command(label='退出', command=self.ui_root.quit)
 
         # 控件内容设置
@@ -60,8 +57,7 @@ class SetUI(object):
         label3 = tk.Label(frame_2, text=" ")
         # 表格样式
         columns = ("序号", "歌手", "歌曲", "专辑")
-        self.show_result = ttk.Treeview(
-            frame_3, height=20, show="headings", columns=columns)
+        self.show_result = ttk.Treeview(frame_3, height=20, show="headings", columns=columns)
         # 下载
         download_button = tk.Button(frame_4, text="下载", font=('楷体', 11), fg='Purple', width=6, height=1, padx=5,
                                     pady=5, command=self.download_music)
@@ -127,12 +123,10 @@ class SetUI(object):
                 'reqId': '858597c1-b18e-11ec-83e4-9d53d2ff08ff'
             }
             try:
-                self.response_data = requests.get(
-                    search_url, params=search_data, headers=headers, timeout=20).json()
+                self.response_data = requests.get(search_url, params=search_data, headers=headers, timeout=20).json()
                 songs_data = self.response_data['data']['list']
                 if int(self.response_data['data']['total']) <= 0:
-                    mes_box.showerror(
-                        title='错误', message='搜索: {} 不存在.'.format(search_input))
+                    mes_box.showerror(title='错误', message='搜索: {} 不存在.'.format(search_input))
                 else:
                     for i in range(len(songs_data)):
                         self.show_result.insert('', i, values=(i + 1, songs_data[i]['artist'], songs_data[i]['name'],
@@ -172,18 +166,19 @@ class SetUI(object):
         下载音乐
         :return:
         """
-        if not os.path.exists('./kuwo_music'):
-            os.mkdir("./kuwo_music/")
+        if not os.path.exists('./kuwo_download'):
+            os.mkdir("./kuwo_download/")
         if self.song_num is not None:
             song_name = self.song_name + '--' + self.song_author + ".mp3"
             try:
-                save_path = os.path.join('./kuwo_music/{}'.format(song_name)) \
+                save_path = os.path.join('./kuwo_download/{}'.format(song_name)) \
                     .replace('\\', '/')
                 true_path = os.path.abspath(save_path)
                 resp = requests.get(self.song_url)
                 with open(save_path, 'wb') as file:
                     file.write(resp.content)
-                    # mes_box.showinfo(title='下载成功', message='歌曲：%s,保存地址为%s' % (self.song_name, true_path))
+                    mes_box.showinfo(title='下载成功', message='歌曲：%s,保存地址为%s' % (self.song_name, true_path))
+                    mes_box.showinfo(title="下载成功", message="歌曲已经下载到软件源目录下的kuwo_download文件夹内")
             except Exception:
                 mes_box.showerror(title='错误', message='未找到存放歌曲的文件夹')
         else:
@@ -195,8 +190,7 @@ class SetUI(object):
         :return:
         """
         layout = [[sg.Text('任务完成进度')],
-                  [sg.ProgressBar(file_size, orientation='h',
-                                  size=(40, 20), key='progressbar')],
+                  [sg.ProgressBar(file_size, orientation='h', size=(40, 20), key='progressbar')],
                   [sg.Cancel()]]
 
         # window只需将自定义的布局加载出来即可 第一个参数是窗口标题。
@@ -207,7 +201,7 @@ class SetUI(object):
             event, values = window.read(timeout=10)
             if event == 'Cancel' or event is None:
                 break
-            # _progress_bar.UpdateBar(i + 1)
+            _progress_bar.UpdateBar(i + 1)
 
     def ui_center(self):
         """
@@ -217,8 +211,7 @@ class SetUI(object):
         hs = self.ui_root.winfo_screenheight()
         x = int((ws / 2) - (self.ui_weight / 2))
         y = int((hs / 2) - (self.ui_height / 2))
-        self.ui_root.geometry(
-            '{}x{}+{}+{}'.format(self.ui_weight, self.ui_height, x, y))
+        self.ui_root.geometry('{}x{}+{}+{}'.format(self.ui_weight, self.ui_height, x, y))
 
     def loop(self):
         """
